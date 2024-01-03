@@ -100,13 +100,37 @@ comprimento :: [Int] ->  Int
 comprimento [] = 0
 comprimento (h:t) = 1 + comprimento t 
 
+
 cubo :: Int -> Int
 cubo x = x * x * x 
+
 
 aoCubo :: [Int] -> [Int]
 aoCubo [] = []
 aoCubo (h:t) = cubo(h) : aoCubo t
 
+
 somatorio :: [Int] -> Int   
 somatorio [] = 0
 somatorio (h:t) = h + somatorio t
+
+-- somatorio (1:[2,3])
+-- = 1 + somatorio [2,3] -> 1 + 5 = 6
+-- = 2 + somatorio [3] -> 2 + 3 = 5
+-- = 3 + somatorio [] ->  3 + 0 = 3
+-- = somatorio [] = 0
+
+
+possuichar :: [Char] -> Char -> Bool
+possuichar [] char = False
+possuichar (h:t) ch
+    | h == ch = True
+    | possuichar t ch
+    | otherwise = False 
+
+
+maiorelemento :: [Int] -> Int
+maiorelemento [x] = x
+maiorelemento (h:t)
+    | h > maiorelemento t = h
+    | otherwise = maiorelemento t  
