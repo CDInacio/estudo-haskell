@@ -1,1 +1,1 @@
-:l aula.hs
+:l Aula1.hs
