@@ -2,7 +2,7 @@
 data Bool = False | True
 -- A parte antes de = denota o tipo, as partes depois de = são construtores de valor, eles especificam os diferentes valores que esse tipo pode ter
 --Ex:
--- data Forma = Circulo Float Float Float | Retangulo Float Float Float Float
+data Forma = Circulo Float Float Float | Retangulo Float Float Float Float
 
 superficie :: Forma -> Float
 superficie (Circulo _ _ r) = Pi * r^2
