@@ -6,7 +6,7 @@ instance Eq Foo where
 -- Foo 1 "ola" /= Foo 1 "hello"
 -- True
 
--- Foo 1 "comida" == Foo 1 "carro"
+-- Foo 1 "comida" == Foo 1 "car"
 -- False
 
 
