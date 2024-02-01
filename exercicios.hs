@@ -16,6 +16,13 @@ tamStr :: String -> Int
 tamStr [] = 0
 tamStr (x:xs) = 1 + tamStr xs
 
+-- Faça uma função que receba uma lista de números e retorne o maior
+maior :: [Int] -> Int
+maior [x] = x
+maior (x:xs) 
+    | x > maior xs = x
+    | otherwise = maior xs
+
 comprimentoPalavras:: [String] -> [Int]
 comprimentoPalavras xs = map length xs
 -- assim tbm funciona
