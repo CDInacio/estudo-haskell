@@ -6,6 +6,11 @@ somaQuadradosImpares xs = foldr (\item acc -> if odd item then item * item + acc
 produtoListaInteiros :: [Int] -> Int
 produtoListaInteiros xs = foldr1 (*) xs
 
+-- aplique a funcao (x+2) a todos os elementos de uma lista, usando map
+func :: [Int] -> [Int]
+func [] = []
+func (x:xs) = (x+2) : func xs
+
 -- Crie uma função que recebe uma lista de palavras e retorna uma nova lista contendo o comprimento de cada palavra, utilizando a função map.
 tamStr :: String -> Int
 tamStr [] = 0
@@ -27,3 +32,26 @@ reverseList (x:xs) = reverseList xs ++ [x]
 
 mapReverse :: [[a]] -> [[a]]
 mapReverse xs = map reverseList xs
+
+-- Faça uma função que calcule o fatorial de um numero
+fatorial:: Int -> Int
+fatorial 1 = 1
+fatorial n = n * fatorial (n-1)
+
+-- Retorna 0 se uma lista for vazia
+listavazia :: [a] -> Int
+listavazia xs
+    | length xs == 0 = 0
+    | otherwise = 1
+
+-- Retorna o penultimo elemento de uma lista
+penultimo :: [Int] -> Int
+penultimo [x,_] = x
+penultimo (x:xs) = penultimo xs
+
+-- Função que assuma uma forma e retorna sua superficie
+data Forma = Circulo Float Float Float | Retangulo Float Float Float Float
+
+superficie :: Forma -> Float
+superficie (Circulo _ _ r) = pi * r^2
+superficie (Retangulo x1 y1 x2 y2) = (abs $ x2-x1) * (abs $ y2-y1)
