@@ -47,3 +47,7 @@ tampalavra xs = map length xs
 
 soma :: [Int] -> [Int]
 soma xs = filter (\x -> if x `mod` 2 == 0 then True else False) xs
+
+-- faça uma funcao que aplica (x+y)/ em uma lista
+func3 x y = (x+y)/2
+foldr func3 [1,2,3]
