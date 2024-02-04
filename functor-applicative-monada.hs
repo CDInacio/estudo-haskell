@@ -67,4 +67,5 @@ func3 :: [Int] -> [Int]
 func3 xs = foldr (\x acc -> acc ++ [x]) [] xs
 
 func4 :: [Int] -> [Int]
+
 func4 xs = foldr (\x acc -> if odd x then x : acc else acc) [] xs
