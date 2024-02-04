@@ -2,6 +2,9 @@
 somaQuadradosImpares:: [Int] -> Int
 somaQuadradosImpares xs = foldr (\item acc -> if odd item then item * item + acc else acc) 0 xs
 
+somaQuadradosImpares2:: [Int] -> Int
+somaQuadradosImpares2 xs = foldl (\acc item -> if odd item then item * item + acc else acc) 0 xs
+
 -- Defina uma função que recebe uma lista de números inteiros e retorna o produto dos elementos usando a função foldr1.
 produtoListaInteiros :: [Int] -> Int
 produtoListaInteiros xs = foldr1 (*) xs
@@ -62,3 +65,6 @@ data Forma = Circulo Float Float Float | Retangulo Float Float Float Float
 superficie :: Forma -> Float
 superficie (Circulo _ _ r) = pi * r^2
 superficie (Retangulo x1 y1 x2 y2) = (abs $ x2-x1) * (abs $ y2-y1)
+
+
+half x = if even x then Just (x `div` 2) else Nothing
